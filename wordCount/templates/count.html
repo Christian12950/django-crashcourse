@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>There are {{wordcount}} words</h1>
+
+<h1>Inputted Text:</h1>
+{{fulltext}}
+
+<h1>Here's the count</h1>
+{%for word, wordNum in sortedWords%}
+{{word}} - {{wordNum}}<br>
+{%endfor%}
+</body>
+</html>

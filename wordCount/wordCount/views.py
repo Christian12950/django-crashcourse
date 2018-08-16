@@ -23,3 +23,6 @@ def count(request):
     print(wordDictionary)
     return render(request, 'count.html', {'fulltext': fulltext, 'wordcount': len(wordList), 'sortedWords': sortedWords})
 
+
+def about(request):
+    return render(request, 'about.html')

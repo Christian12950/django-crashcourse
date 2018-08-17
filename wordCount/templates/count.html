@@ -9,10 +9,14 @@
 
 <h1>Inputted Text:</h1>
 {{fulltext}}
-
+<br>
+<form action="{% url 'home' %}"> <!-- The url is the name given to it in urls -->
+    <input type="submit", value="New Phrase">
+</form>
 <h1>Here's the count</h1>
 {%for word, wordNum in sortedWords%}
 {{word}} - {{wordNum}}<br>
 {%endfor%}
+
 </body>
 </html>

@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+import re
 import operator
 
 
@@ -10,7 +11,7 @@ def home(request):
 def count(request):
     fulltext = request.GET['fulltext']
     print(fulltext)
-    wordList = fulltext.split()
+    wordList = re.findall(r"[\w']+", fulltext)
     wordDictionary = {}
 
     for word in wordList:

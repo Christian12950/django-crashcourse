@@ -1,5 +1,6 @@
 
 <!doctype html>
+{% load staticfiles %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -20,15 +21,15 @@
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">Christian Brand</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Christian Brand</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
               <a class="nav-item nav-link" href="https://www.linkedin.com/in/christian-brand-947189108/">LinkedIn</a>
-              <a class="nav-item nav-link" href="#">Resume</a>
-              <a class="nav-item nav-link" href="blog/">Blog</a>
+              <a class="nav-item nav-link" href="{% static 'CDB_Resume.pdf' %}">Resume</a>
+              <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
             </div>
           </div>
         </nav>
@@ -39,9 +40,15 @@
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">Hi, I'm Christian</h1>
-          <p class="lead text-muted">Hello. I am Christian Brand. I am graduating from Penn State with a B.S. in Computer Science this December.</p>
+          <img src="{% static 'me.jpg' %}" height="300">
+          <p class="lead text-muted">Hello. I am Christian Brand. I am graduating from Penn State with a B.S. in Computer Science this December.
+            I am currently searching for a full-time career following my graduation in Software Engineering and Application Development.
+            This page was created as a personal project to teach myself the Django Framework using Python.
+            Below, you can catch a glimpse at some of the other projects I have worked on up until this point.
+            Feel free to email me if you have any questions.
+          </p>
           <p>
-            <a href="mailto:cbrand1295@gmail.com" class="btn btn-primary my-2">Email Me</a>
+            <a href="mailto:cbrand1295@gmail.com" class="btn btn-primary my-2">cbrand1295@gmail.com</a>
           </p>
         </div>
       </section>
@@ -61,16 +68,14 @@
               </div>
             {% endfor %}
           </div>
+          <div class="container text-center">
+            <p>© Christian Brand {% now "Y"%}</p>
+          </div>
         </div>
+
       </div>
 
     </main>
-
-    <footer class="text-muted">
-      <div class="container text-center">
-        <p>© Christian Brand {% now "Y"%}</p>
-      </div>
-    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
